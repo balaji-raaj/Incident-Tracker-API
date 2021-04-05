@@ -19,14 +19,14 @@ namespace Incident_Tracker_API_Test.Controllers
         public void TestSetup()
         {
             //Arrange
-            var mock = new Mock<IDbContext>();
-            mock.Setup(x => x.Set<TrackerDetails>())
-                .Returns(new FakeDbSet<TrackerDetails>
-                {
-                    new TrackerDetails { Id = 1  }
-                });
+            //var mock = new Mock<IDbContext>();
+            //mock.Setup(x => x.Set<TrackerDetails>())
+            //    .Returns(new FakeDbSet<TrackerDetails>
+            //    {
+            //        new TrackerDetails { Id = 1  }
+            //    });
 
-            underTest = new TrackerController(mock);
+            //underTest = new TrackerController();
         }
     }
 }
