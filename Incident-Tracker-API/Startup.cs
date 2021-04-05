@@ -36,7 +36,7 @@ namespace Incident_Tracker_API
             });
             services.AddCors(c =>
             {
-                c.AddPolicy("AllowAllOrigin", options => options.AllowAnyOrigin());
+                c.AddPolicy("AllowAllOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
             services.AddControllers();
             services.AddSwaggerGen();
@@ -57,7 +57,13 @@ namespace Incident_Tracker_API
                s.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
            });
 
-            app.UseCors(options => options.AllowAnyOrigin());
+            //app.UseCors(options => options.AllowAnyOrigin());
+
+            //app.UseCors(options => options.AllowAnyHeader());
+
+            //app.UseCors(options => options.AllowAnyMethod());
+
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod());
 
             app.UseHttpsRedirection();
 
